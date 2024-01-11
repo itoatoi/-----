@@ -1,0 +1,37 @@
+#scroll_section_0 h1 {
+  position: relative;
+  z-index: 5;
+  font-size: 4rem;
+  text-align: center;
+  color: rgb(252, 7, 3);
+}
+.main_message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 35vh;
+  margin: 5px 0;
+  height: 3em;
+  font-size: 2.5rem;
+  opacity: 0;
+  text-align: center;
+}
+.main_message p {
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+.main_message small {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+}
+
+/* media query */
+@media (min-width: 1024px) {
+  #scroll_section_0 h1 {
+    font-size: 12.343rem;
+  }
+  .main_message {
+    font-size: 5.486rem;
+  }
+}

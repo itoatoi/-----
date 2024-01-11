@@ -1,0 +1,84 @@
+/*- 공통 style */
+nav.global_menu,
+nav.local_menu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: var(--layout-padding);
+}
+.global_menu_links,
+.local_menu_links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/*- menus */
+nav.global_menu {
+  top: 0;
+  z-index: 10;
+  height: 44px;
+  padding: var(--layout-padding);
+}
+.global_menu_links {
+  justify-content: space-between;
+}
+.local_menu_links {
+  padding-top: 0.5em;
+  width: 100%;
+  justify-content: center;
+}
+
+nav.local_menu {
+  top: 44px;
+  z-index: 11;
+  height: 60px;
+  /* border-bottom: 1px solid #ddd; */
+  justify-content: center;
+}
+
+.local_nav_sticky .local_menu {
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.1);
+  /* for iPhone
+  -webkit-backdrop-filter: saturate(180%) blur(15px);
+  -moz-backdrop-filter: saturate(180%) blur(15px);
+  -o-backdrop-filter: saturate(180%) blur(15px);
+  backdrop-filter: saturate(180%) blur(15px); */
+}
+
+/* style 우선순위는 태그붙여진 클래스명이 더높다. */
+.local_menu_links a.product_title {
+  /* margin-right: auto; */
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.local_menu_links a.product_title svg {
+  width: 100%;
+  max-width: 200px;
+  height: 44px;
+}
+
+.local_menu_links .local_menu_item {
+  font-size: 0.8rem;
+}
+.local_menu_links a:not(.product_title) {
+  margin-left: 2em;
+}
+.local_menu_sticky nav.local_menu {
+  position: fixed;
+  top: 0;
+  /* background: rgba(255, 255, 255, 0.1); */
+  /* backdrop filter iphone 호환 */
+  -webkit-backdrop-filter: saturate(180%) blur(15px);
+  -moz-backdrop-filter: saturate(180%) blur(15px);
+  -o-backdrop-filer: saturate(180%) blur(15px);
+  backdrop-filter: saturate(180%) blur(15px);
+}
+
+/* media query */
+@media (min-width: 1024px) {
+}

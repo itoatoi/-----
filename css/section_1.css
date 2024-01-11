@@ -1,0 +1,33 @@
+p.description {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 5em;
+  font-size: 1.2rem;
+  padding: var(--layout-padding);
+  color: #888;
+  overflow: hidden;
+}
+p.description strong {
+  display: block;
+  margin-top: 0.2em;
+  font-size: 3rem;
+  /* float: left; */
+  margin-right: 0.2em;
+  color: var(--black-color);
+}
+
+.image_container img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* media query */
+@media (min-width: 1024px) {
+  p.description {
+    padding: 0;
+    font-size: 2rem;
+  }
+  p.description strong {
+    font-size: 6rem;
+  }
+}

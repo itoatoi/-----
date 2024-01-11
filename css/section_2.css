@@ -1,0 +1,32 @@
+#scroll_section_2 .main_message {
+  font-size: 3.5rem;
+  text-align: center;
+}
+.main_message small {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+}
+#scroll_section_2 .b {
+  top: 10%;
+  left: 40%;
+}
+#scroll_section_2 .c {
+  top: 15%;
+  left: 45%;
+}
+
+.sticky_elem.desc_message {
+  width: 45%;
+  font-weight: bold;
+  opacity: 0;
+}
+.pin {
+  width: 1px;
+  height: 100px;
+  background: var(--black-color);
+}
+
+/* media query */
+@media (min-width: 1024px) {
+}
