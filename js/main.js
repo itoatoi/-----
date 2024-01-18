@@ -8,7 +8,7 @@ import { setLayout, scrollObserver, playAnimation, setCanvasImages, calcAnimatio
   let currentSection = 0; // 나의 현재 위치가 어디섹션에 있는지 알려주는 변수
 
   //* 스크롤 감속 변수들
-  let acc = 0.2; // 속도
+  let acc = 0.5; // 속도
   let delaydYOffset = 0; // 변화되는 스크롤 거리
   let rafId; // reqAnimation id
   let rafState;
@@ -16,7 +16,6 @@ import { setLayout, scrollObserver, playAnimation, setCanvasImages, calcAnimatio
   //- scroll 할때 감속효과를 주기위한 함수
   function scrollSpeedFunc() {
     delaydYOffset = delaydYOffset + (yOffset - delaydYOffset) * acc;
-
     if (!isNewSectionChange) {
       if (currentSection === 0 || currentSection === 2 || currentSection === 3) {
         const currentYOffset = delaydYOffset - prevScrollHeight;
@@ -30,13 +29,13 @@ import { setLayout, scrollObserver, playAnimation, setCanvasImages, calcAnimatio
         if (elems.videoImages[sequence]) {
           elems.context.drawImage(elems.videoImages[sequence], 0, 0);
         }
-        rafId = requestAnimationFrame(scrollSpeedFunc);
-
-        if (Math.abs(yOffset - delaydYOffset) < 1) {
-          cancelAnimationFrame(rafId);
-          rafState = false;
-        }
       }
+    }
+
+    rafId = requestAnimationFrame(scrollSpeedFunc);
+    if (Math.abs(yOffset - delaydYOffset) < 1) {
+      cancelAnimationFrame(rafId);
+      rafState = false;
     }
   }
 
@@ -59,7 +58,6 @@ import { setLayout, scrollObserver, playAnimation, setCanvasImages, calcAnimatio
 
       if (!rafState) {
         rafId = requestAnimationFrame(scrollSpeedFunc);
-        // rafState = true;
       }
     });
   });
